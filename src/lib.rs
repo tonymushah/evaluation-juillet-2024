@@ -1,3 +1,9 @@
+mod error;
+
+pub use error::Error;
+
+pub type Result<T, E = crate::error::Error> = std::result::Result<T, E>;
+
 use std::env;
 
 // add the `r2d2` feature for diesel
