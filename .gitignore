@@ -1,3 +1,6 @@
+# timesheet
+.~lock.Timesheet-evaluation.xlsx#
+
 node_modules
 
 # Output
@@ -24,3 +27,4 @@ vite.config.ts.timestamp-*
 # Added by cargo
 
 /target
+
