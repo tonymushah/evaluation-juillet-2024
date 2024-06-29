@@ -1,4 +1,5 @@
 mod error;
+pub mod reset;
 
 pub use error::Error;
 
