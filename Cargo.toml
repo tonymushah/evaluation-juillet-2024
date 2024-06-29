@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 exclude = ["/app", "/node_modules"]
 default-run = "evaluation-juillet-2024"
+resolver = "2"
 
 [dependencies]
 diesel = { version = "2", features = [
@@ -32,3 +33,12 @@ rand = "0.8"
 tokio = { version = "1", features = ["sync"] }
 csv = "1"
 convert_case = "0.6"
+tonic.workspace = true
+prost.workspace = true
+
+[build-dependencies]
+tonic-build = { version = "0.11" }
+
+[workspace.dependencies]
+tonic = { version = "0.11" }
+prost = { version = "0.12" }
