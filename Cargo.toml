@@ -2,6 +2,8 @@
 name = "evaluation-juillet-2024"
 version = "0.1.0"
 edition = "2021"
+exclude = ["/app", "/node_modules"]
+default-run = "evaluation-juillet-2024"
 
 [dependencies]
 diesel = { version = "2", features = [
