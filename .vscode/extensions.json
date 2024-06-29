@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "rust-lang.rust-analyzer",
+        "pbkit.vscode-pbkit",
+        "svelte.svelte-vscode",
+        "tamasfe.even-better-toml"
+    ]
+}
