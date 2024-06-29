@@ -14,14 +14,11 @@ diesel = { version = "2", features = [
     "numeric",
 ] }
 dotenvy = "0.15"
-actix-web = "4"
-async-graphql = { version = "7", features = ["uuid", "time", "bigdecimal"] }
 uuid = "1"
 jwt = "0.16"
 serde = { version = "1", features = ["derive"] }
 anyhow = "1"
 thiserror = "1"
-async-graphql-actix-web = "7"
 hmac = "0.12"
 sha2 = "0.10"
 time = { version = "0.3", features = [
@@ -30,7 +27,6 @@ time = { version = "0.3", features = [
     "serde-human-readable",
 ] }
 bigdecimal = { version = "0.4", features = ["serde"] }
-actix-cors = "0.7"
 regex = "1.10"
 rand = "0.8"
 tokio = { version = "1", features = ["sync"] }
