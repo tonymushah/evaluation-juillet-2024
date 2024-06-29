@@ -37,5 +37,6 @@
         "**/Thumbs.db": true,
         ".~lock.Timesheet-evaluation.xlsx#": true
     },
-    "explorerExclude.backup": {}
+    "explorerExclude.backup": {},
+    "rust-analyzer.cargo.buildScripts.enable": true
 }
