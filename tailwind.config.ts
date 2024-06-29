@@ -25,5 +25,11 @@ export default {
     }
 	},
 
-	plugins: [flowbitePlugin, require('@tailwindcss/typography')]
+	plugins: [flowbitePlugin, require('@tailwindcss/typography')],
+	fontFamily: {
+			mono: ["'Fira Mono'", 'monospace'],
+			serif: ["'Inter Variable'", 'sans-serif'],
+			sans: ["'Poppins'", 'sans-serif'],
+			brand: ["'Freckle Face'", 'system-ui']
+		}
 } as Config;
