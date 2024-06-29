@@ -7,13 +7,7 @@ default-run = "evaluation-juillet-2024"
 resolver = "2"
 
 [dependencies]
-diesel = { version = "2", features = [
-    "postgres",
-    "r2d2",
-    "uuid",
-    "time",
-    "numeric",
-] }
+diesel.workspace = true
 dotenvy = "0.15"
 uuid = "1"
 jwt = "0.16"
@@ -30,7 +24,7 @@ time = { version = "0.3", features = [
 bigdecimal = { version = "0.4", features = ["serde"] }
 regex = "1.10"
 rand = "0.8"
-tokio = { version = "1", features = ["sync"] }
+tokio = { workspace = true, features = ["sync", "macros", "rt-multi-thread"] }
 csv = "1"
 convert_case = "0.6"
 tonic.workspace = true
@@ -42,3 +36,11 @@ tonic-build = { version = "0.11" }
 [workspace.dependencies]
 tonic = { version = "0.11" }
 prost = { version = "0.12" }
+diesel = { version = "2", features = [
+    "postgres",
+    "r2d2",
+    "uuid",
+    "time",
+    "numeric",
+] }
+tokio = { version = "1" }
