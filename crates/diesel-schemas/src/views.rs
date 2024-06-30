@@ -49,3 +49,9 @@ diesel::table! {
         date_fin -> Nullable<Timestamp>,
     }
 }
+
+diesel::table! {
+    v_bien_non_loue(bien) {
+        bien -> Uuid
+    }
+}
