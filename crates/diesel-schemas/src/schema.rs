@@ -12,6 +12,15 @@ diesel::table! {
 }
 
 diesel::table! {
+    bien_loyer (id_bien_loyer) {
+        id_bien_loyer -> Uuid,
+        bien -> Uuid,
+        valeur -> Numeric,
+        date_entree -> Timestamp,
+    }
+}
+
+diesel::table! {
     proprietaire (telephone) {
         telephone -> Text,
         nom -> Text,
@@ -44,10 +53,12 @@ diesel::table! {
 diesel::joinable!(bien -> proprietaire (proprietaire));
 diesel::joinable!(bien -> region (region));
 diesel::joinable!(bien -> type_bien (type_bien));
+diesel::joinable!(bien_loyer -> bien (bien));
 diesel::joinable!(type_bien_commission -> type_bien (type_bien));
 
 diesel::allow_tables_to_appear_in_same_query!(
     bien,
+    bien_loyer,
     proprietaire,
     region,
     type_bien,
