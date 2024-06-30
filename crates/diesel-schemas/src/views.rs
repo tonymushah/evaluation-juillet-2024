@@ -15,3 +15,12 @@ diesel::table! {
         commission -> Numeric
     }
 }
+
+diesel::table! {
+    v_bien_loyer_recent (id_bien_loyer) {
+        id_bien_loyer -> Uuid,
+        bien -> Uuid,
+        valeur -> Numeric,
+        date_entree -> Timestamp,
+    }
+}
