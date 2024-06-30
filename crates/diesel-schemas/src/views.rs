@@ -39,3 +39,13 @@ diesel::table! {
         nom_type_bien -> Text
     }
 }
+
+diesel::table! {
+    v_location_recent(id_location) {
+        id_location -> Uuid,
+        bien -> Uuid,
+        client -> Text,
+        date_debut -> Timestamp,
+        date_fin -> Nullable<Timestamp>,
+    }
+}
