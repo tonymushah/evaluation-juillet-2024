@@ -38,6 +38,17 @@ diesel::table! {
 }
 
 diesel::table! {
+    payement (id_payement) {
+        id_payement -> Uuid,
+        location -> Uuid,
+        montant -> Numeric,
+        date_paiement -> Timestamp,
+        loyer -> Uuid,
+        commission_id -> Uuid,
+    }
+}
+
+diesel::table! {
     proprietaire (telephone) {
         telephone -> Text,
         nom -> Text,
@@ -73,6 +84,9 @@ diesel::joinable!(bien -> type_bien (type_bien));
 diesel::joinable!(bien_loyer -> bien (bien));
 diesel::joinable!(location -> bien (bien));
 diesel::joinable!(location -> client (client));
+diesel::joinable!(payement -> bien_loyer (loyer));
+diesel::joinable!(payement -> location (location));
+diesel::joinable!(payement -> type_bien_commission (commission_id));
 diesel::joinable!(type_bien_commission -> type_bien (type_bien));
 
 diesel::allow_tables_to_appear_in_same_query!(
@@ -80,6 +94,7 @@ diesel::allow_tables_to_appear_in_same_query!(
     bien_loyer,
     client,
     location,
+    payement,
     proprietaire,
     region,
     type_bien,
