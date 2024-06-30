@@ -407,6 +407,7 @@ dependencies = [
  "convert_case",
  "csv",
  "diesel",
+ "diesel-schemas",
  "dotenvy",
  "hmac",
  "jwt",

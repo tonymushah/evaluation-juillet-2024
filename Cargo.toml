@@ -29,6 +29,7 @@ csv = "1"
 convert_case = "0.6"
 tonic.workspace = true
 prost.workspace = true
+diesel-schemas = { path = "./crates/diesel-schemas" }
 
 [build-dependencies]
 tonic-build = { version = "0.11" }
