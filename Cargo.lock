@@ -319,6 +319,9 @@ dependencies = [
 [[package]]
 name = "diesel-schemas"
 version = "0.1.0"
+dependencies = [
+ "diesel",
+]
 
 [[package]]
 name = "diesel_derives"
