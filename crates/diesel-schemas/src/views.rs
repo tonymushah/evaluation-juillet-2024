@@ -61,3 +61,12 @@ diesel::table! {
         bien -> Uuid
     }
 }
+
+diesel::table! {
+    v_payement_grouped (location, loyer, commission_id) {
+        location -> Uuid,
+        montant -> Numeric,
+        loyer -> Uuid,
+        commission_id -> Uuid,
+    }
+}

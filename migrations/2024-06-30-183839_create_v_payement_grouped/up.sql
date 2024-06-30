@@ -1,0 +1,13 @@
+-- Your SQL goes here
+create view v_payement_grouped as 
+SELECT
+	LOCATION,
+	SUM(MONTANT) AS MONTANT,
+	LOYER,
+	COMMISSION_ID
+FROM
+	PAYEMENT
+GROUP BY
+	LOCATION,
+	LOYER,
+	COMMISSION_ID;
