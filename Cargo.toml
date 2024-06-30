@@ -9,19 +9,15 @@ resolver = "2"
 [dependencies]
 diesel.workspace = true
 dotenvy = "0.15"
-uuid = "1"
+uuid = { workspace = true }
 jwt = "0.16"
 serde = { version = "1", features = ["derive"] }
 anyhow = "1"
 thiserror = "1"
 hmac = "0.12"
 sha2 = "0.10"
-time = { version = "0.3", features = [
-    "serde",
-    "macros",
-    "serde-human-readable",
-] }
-bigdecimal = { version = "0.4", features = ["serde"] }
+time.workspace = true
+bigdecimal = { workspace = true, features = ["serde"] }
 regex = "1.10"
 rand = "0.8"
 tokio = { workspace = true, features = ["sync", "macros", "rt-multi-thread"] }
@@ -52,3 +48,10 @@ darling = "0.20"
 proc-macro2 = "1"
 quote = "1"
 syn = "2"
+bigdecimal = { version = "0.4" }
+uuid = "1"
+time = { version = "0.3", features = [
+    "serde",
+    "macros",
+    "serde-human-readable",
+] }
