@@ -21,6 +21,13 @@ diesel::table! {
 }
 
 diesel::table! {
+    client (email) {
+        email -> Text,
+        nom -> Text,
+    }
+}
+
+diesel::table! {
     proprietaire (telephone) {
         telephone -> Text,
         nom -> Text,
@@ -59,6 +66,7 @@ diesel::joinable!(type_bien_commission -> type_bien (type_bien));
 diesel::allow_tables_to_appear_in_same_query!(
     bien,
     bien_loyer,
+    client,
     proprietaire,
     region,
     type_bien,
