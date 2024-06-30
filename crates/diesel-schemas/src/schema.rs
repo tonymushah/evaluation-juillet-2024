@@ -7,7 +7,7 @@ diesel::table! {
         region -> Uuid,
         description -> Text,
         proprietaire -> Text,
-        type_bien -> Nullable<Uuid>,
+        type_bien -> Uuid,
     }
 }
 
