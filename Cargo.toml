@@ -47,3 +47,7 @@ diesel = { version = "2", features = [
     "numeric",
 ] }
 tokio = { version = "1" }
+darling = "0.20"
+proc-macro2 = "1"
+quote = "1"
+syn = "2"
