@@ -55,3 +55,9 @@ diesel::table! {
         bien -> Uuid
     }
 }
+
+diesel::table! {
+    v_bien_non_loue(bien) {
+        bien -> Uuid
+    }
+}
