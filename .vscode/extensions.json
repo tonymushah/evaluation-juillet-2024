@@ -4,6 +4,7 @@
         "pbkit.vscode-pbkit",
         "svelte.svelte-vscode",
         "tamasfe.even-better-toml",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "adpyke.vscode-sql-formatter"
     ]
 }

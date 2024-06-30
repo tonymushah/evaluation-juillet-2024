@@ -29,9 +29,13 @@ csv = "1"
 convert_case = "0.6"
 tonic.workspace = true
 prost.workspace = true
+diesel-schemas = { path = "./crates/diesel-schemas" }
 
 [build-dependencies]
 tonic-build = { version = "0.11" }
+
+[workspace]
+members = ["crates/diesel-schemas"]
 
 [workspace.dependencies]
 tonic = { version = "0.11" }
@@ -44,3 +48,7 @@ diesel = { version = "2", features = [
     "numeric",
 ] }
 tokio = { version = "1" }
+darling = "0.20"
+proc-macro2 = "1"
+quote = "1"
+syn = "2"
