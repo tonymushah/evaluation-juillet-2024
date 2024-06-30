@@ -33,6 +33,9 @@ prost.workspace = true
 [build-dependencies]
 tonic-build = { version = "0.11" }
 
+[workspace]
+members = ["crates/diesel-schemas"]
+
 [workspace.dependencies]
 tonic = { version = "0.11" }
 prost = { version = "0.12" }
