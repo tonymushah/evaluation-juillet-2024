@@ -14,7 +14,15 @@ diesel::table! {
     }
 }
 
+diesel::table! {
+    type_bien (id_type_bien) {
+        id_type_bien -> Uuid,
+        designation -> Text,
+    }
+}
+
 diesel::allow_tables_to_appear_in_same_query!(
     proprietaire,
     region,
+    type_bien,
 );
