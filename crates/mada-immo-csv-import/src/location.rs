@@ -1,3 +1,5 @@
+pub mod models;
+
 use diesel::{PgConnection, QueryResult};
 use serde::{Deserialize, Deserializer};
 use time::{format_description, Date};
