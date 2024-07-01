@@ -51,7 +51,7 @@ impl CSVBien {
 #[cfg(test)]
 mod tests {
     use diesel::{
-        r2d2::{ConnectionManager, Pool, PooledConnection},
+        r2d2::{ConnectionManager, Pool},
         PgConnection,
     };
     use dotenvy::dotenv;
