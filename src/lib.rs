@@ -1,4 +1,5 @@
 mod error;
+pub mod models;
 pub mod reset;
 
 pub use error::Error;
