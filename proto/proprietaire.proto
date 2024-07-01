@@ -16,9 +16,64 @@ service Auth {
     rpc Login(LoginRequest) returns (LoginResponse);
 }
 
+message ListBienRequest {
+    optional uint32 offset = 1;
+    optional uint32 limit = 2;
+    repeated string type_biens = 3;
+}
+
+message Bien {
+    message TypeBien {
+        string id = 1;
+        string nom = 2;
+    }
+    reserved 5, 7;
+    string id = 1;
+    string nom = 2;
+    string region = 3;
+    string description = 4;
+    // string proprietaire = 5;
+    TypeBien type_bien = 6;
+    // bool is_disponible = 7;
+    string date_disponible = 8;
+}
+
+message ListBienResponse {
+    repeated Bien biens = 1;
+    uint64 offset = 2;
+    uint64 limit = 3;
+    uint64 total = 4;
+}
+
+message GetBienRequest {
+    string id = 1;
+}
+
+message ListTypeBienRequest {
+    optional uint32 offset = 1;
+    optional uint32 limit = 2;
+}
+
+message ListTypeBienResponse {
+    repeated Bien.TypeBien data = 1;
+    uint64 offset = 2;
+    uint64 limit = 3;
+    uint64 total = 4;
+}
+
 service Biens {
     rpc ListBien(ListBienRequest) returns (ListBienResponse);
-    rpc Get(GetBienRequest) returns (GetBienResponse);
+    rpc Get(GetBienRequest) returns (Bien);
+    rpc ListTypeBien(ListTypeBienRequest) returns (ListTypeBienResponse);
+}
+
+message ChiffreAffairesRequest {
+    repeated string biens = 1;
+    repeated string type_bien = 2;
+}
+
+message ChiffreAffairesResponse {
+    float valeur = 1;
 }
 
 service Comptes {
