@@ -8,7 +8,7 @@ resolver = "2"
 
 [dependencies]
 diesel.workspace = true
-dotenvy = "0.15"
+dotenvy.workspace = true
 uuid = { workspace = true }
 jwt = "0.16"
 serde.workspace = true
@@ -59,3 +59,4 @@ anyhow = "1"
 regex = "1.10"
 diesel-schemas = { path = "./crates/diesel-schemas" }
 serde = { version = "1", features = ["derive"] }
+dotenvy = "0.15"
