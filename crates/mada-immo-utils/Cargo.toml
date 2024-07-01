@@ -5,3 +5,6 @@ edition = "2021"
 
 [dependencies]
 time = { workspace = true }
+
+[dev-dependencies]
+time = { workspace = true, features = ["macros"] }
