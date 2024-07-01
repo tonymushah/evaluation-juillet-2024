@@ -1,9 +1,20 @@
 pub mod models;
 
-use diesel::{PgConnection, QueryResult};
+use diesel::prelude::*;
+use diesel_schemas::tables::location;
+use mada_immo_utils::get_date_fin_from_nb_mois;
+use models::{InsertClient, InsertLocation};
 use serde::{Deserialize, Deserializer};
-use time::{format_description, Date};
+use time::{format_description, Date, PrimitiveDateTime, Time};
 use uuid::Uuid;
+
+#[derive(Debug, thiserror::Error)]
+pub enum CSVLocationInsertError {
+    #[error(transparent)]
+    Diesel(#[from] diesel::result::Error),
+    #[error("Can't get the day from {date} {nb_mois}")]
+    DateFinGetError { date: Date, nb_mois: u8 },
+}
 
 #[derive(Debug, Clone, Deserialize)]
 pub struct CSVLocation {
@@ -11,13 +22,31 @@ pub struct CSVLocation {
     #[serde(alias = "Date debut", deserialize_with = "serealize_date_debut")]
     pub date_debut: Date,
     #[serde(alias = "duree mois")]
-    pub duree_mois: u32,
+    pub duree_mois: u8,
     pub client: String,
 }
 
 impl CSVLocation {
-    pub fn insert(&self, con: &mut PgConnection) -> QueryResult<Uuid> {
-        todo!()
+    pub fn insert(&self, con: &mut PgConnection) -> Result<Uuid, CSVLocationInsertError> {
+        use self::location::dsl::*;
+        InsertClient::insert(self.client.clone(), con)?;
+        Ok(diesel::insert_into(location)
+            .values(InsertLocation {
+                bien: self.reference.clone(),
+                client: self.client.clone(),
+                date_debut: PrimitiveDateTime::new(self.date_debut, Time::MIDNIGHT),
+                date_fin: PrimitiveDateTime::new(
+                    get_date_fin_from_nb_mois(self.date_debut, self.duree_mois).ok_or(
+                        CSVLocationInsertError::DateFinGetError {
+                            date: self.date_debut,
+                            nb_mois: self.duree_mois,
+                        },
+                    )?,
+                    Time::MIDNIGHT,
+                ),
+            })
+            .returning(id_location)
+            .get_result(con)?)
     }
 }
 
