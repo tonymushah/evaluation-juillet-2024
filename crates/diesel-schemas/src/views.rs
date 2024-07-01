@@ -70,3 +70,14 @@ diesel::table! {
         commission_id -> Uuid,
     }
 }
+
+diesel::table! {
+    v_payement_grouped_extended(location, loyer_id, commission_id) {
+        location -> Uuid,
+        montant -> Numeric,
+        loyer_id -> Uuid,
+        commission_id -> Uuid,
+        reste -> Numeric,
+        valeur_commission -> Numeric
+    }
+}
