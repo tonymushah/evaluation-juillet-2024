@@ -65,3 +65,4 @@ diesel-schemas = { path = "./crates/diesel-schemas" }
 serde = { version = "1", features = ["derive"] }
 dotenvy = "0.15"
 mada-immo-utils = { path = "./crates/mada-immo-utils" }
+tonic_web = "0.11"
