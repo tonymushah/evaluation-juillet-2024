@@ -1,0 +1,122 @@
+syntax = "proto3";
+
+package mg.mada_immo.admin;
+
+message Empty {
+
+}
+
+
+message LoginRequest {
+    string password = 2;
+}
+
+message LoginResponse {
+    string session_token = 1;
+}
+
+service Auth {
+    rpc Login(LoginRequest) returns (LoginResponse);
+}
+
+message ChiffreAffaireRequest {
+    optional string date_debut = 1;
+    optional string date_fin = 2;
+}
+
+message ChiffreAffaireResponse {
+    float valeur = 1;
+}
+
+message GainRequest {
+    optional string date_debut = 1;
+    optional string date_fin = 2;
+}
+
+message GainResponse {
+    float valeur = 1;
+}
+
+service Comptes {
+    rpc ChiffreAffaire(stream ChiffreAffaireRequest) returns (stream ChiffreAffaireResponse);
+    rpc Gain(stream GainRequest) returns (stream GainResponse);
+}
+
+message ImportBienRequest {
+    bytes content = 1;
+}
+
+message ImportLocationRequest {
+    bytes content = 1;
+}
+
+message ImportCommissionRequest {
+    bytes content = 1;
+}
+
+service Imports {
+    rpc Bien(stream ImportBienRequest) returns (Empty);
+    rpc Location(stream ImportLocationRequest) returns (Empty);
+    rpc Commission(stream ImportCommissionRequest) returns (Empty);
+}
+
+message NewLocationRequest {
+    string bien_reference = 1;
+    string client = 2;
+    string date_entree = 3;
+    uint32 durree_mois = 4;
+}
+
+message NewLocationResponse {
+    string id = 1;
+    string bien_reference = 2;
+    string client = 3;
+    string date_entree = 4;
+    string date_sortie = 5;
+}
+
+message ListBienRequest {
+    optional uint32 offset = 1;
+    optional uint32 limit = 2;
+    optional string nom = 3;
+}
+
+
+message ListBienResponse {
+    message Bien {
+        reserved 5;
+        string reference = 1;
+        string nom = 2;
+        string description = 3;
+        float loyer = 4;
+        // string proprio = 5;
+    }
+    repeated Bien biens = 1;
+    uint32 offset = 2;
+    uint32 limit = 3;
+    uint32 total = 4;
+}
+
+message ListClientRequest {
+    optional uint32 offset = 1;
+    optional uint32 limit = 2;
+    optional string nom = 3;
+    optional string email = 4;
+}
+
+message ListClient {
+    message Client {
+        string email = 1;
+        string nom = 2;
+    }
+    repeated Client biens = 1;
+    uint32 offset = 2;
+    uint32 limit = 3;
+    uint32 total = 4;
+}
+
+service Location {
+    rpc NewLocation(NewLocationRequest) returns (NewLocationResponse);
+    rpc ListBien(ListBienRequest) returns (ListBienResponse);
+    rpc ListClient(ListClientRequest) returns (ListClientResponse);
+}
