@@ -9,7 +9,7 @@ csv.workspace = true
 diesel-schemas = { workspace = true }
 serde.workspace = true
 uuid.workspace = true
-time.workspace = true
+time = { workspace = true, features = ["formatting", "parsing"] }
 bigdecimal = { workspace = true, features = ["serde"] }
 thiserror.workspace = true
 
