@@ -1,0 +1,1 @@
+export const PROPRIO_TOKEN_KEY = 'PROPRIO-AUTH-TOKEN';
