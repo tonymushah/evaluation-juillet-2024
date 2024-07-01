@@ -14,7 +14,7 @@ select
                         date '2024/02/1'
                 ) - 1
             )
-        ) % 11
+        ) % 12
     ) + (
         (
             extract(
@@ -26,5 +26,5 @@ select
                 from
                     date '2024/02/1'
             )
-        ) * 11
+        ) * 12
     ) as result;
