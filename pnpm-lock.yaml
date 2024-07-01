@@ -20,6 +20,15 @@ importers:
       '@fontsource/poppins':
         specifier: ^5.0.14
         version: 5.0.14
+      '@protobuf-ts/grpcweb-transport':
+        specifier: ^2.9.4
+        version: 2.9.4
+      '@protobuf-ts/runtime':
+        specifier: ^2.9.4
+        version: 2.9.4
+      '@protobuf-ts/runtime-rpc':
+        specifier: ^2.9.4
+        version: 2.9.4
     devDependencies:
       '@playwright/test':
         specifier: ^1.28.1
@@ -399,6 +408,9 @@ packages:
 
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+
+  '@protobuf-ts/grpcweb-transport@2.9.4':
+    resolution: {integrity: sha512-6aQgwPTgX6FkqWqmNts3uk8T/C5coJoH7U87zgaZY/Wo2EVa9SId5bXTM8uo4WR+CN8j9W4c9ij1yG13Hc3xUw==}
 
   '@protobuf-ts/plugin-framework@2.9.4':
     resolution: {integrity: sha512-9nuX1kjdMliv+Pes8dQCKyVhjKgNNfwxVHg+tx3fLXSfZZRcUHMc1PMwB9/vTvc6gBKt9QGz5ERqSqZc0++E9A==}
@@ -2434,6 +2446,11 @@ snapshots:
   '@polka/url@1.0.0-next.25': {}
 
   '@popperjs/core@2.11.8': {}
+
+  '@protobuf-ts/grpcweb-transport@2.9.4':
+    dependencies:
+      '@protobuf-ts/runtime': 2.9.4
+      '@protobuf-ts/runtime-rpc': 2.9.4
 
   '@protobuf-ts/plugin-framework@2.9.4':
     dependencies:

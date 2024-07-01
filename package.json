@@ -52,6 +52,9 @@
 		"@fontsource-variable/inter": "^5.0.18",
 		"@fontsource/fira-mono": "^5.0.13",
 		"@fontsource/freckle-face": "^5.0.20",
-		"@fontsource/poppins": "^5.0.14"
+		"@fontsource/poppins": "^5.0.14",
+		"@protobuf-ts/grpcweb-transport": "^2.9.4",
+		"@protobuf-ts/runtime": "^2.9.4",
+		"@protobuf-ts/runtime-rpc": "^2.9.4"
 	}
 }
