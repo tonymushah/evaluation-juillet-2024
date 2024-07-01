@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package mg.mada_immo.prorietaire;
+
+message Empty{}
+
+message LoginRequest {
+    string telephone = 1;
+}
+
+message LoginResponse {
+    string token = 1;
+}
+
+service Auth {
+    rpc Login(LoginRequest) returns (LoginResponse);
+}
+
+service Biens {
+    rpc ListBien(ListBienRequest) returns (ListBienResponse);
+    rpc Get(GetBienRequest) returns (GetBienResponse);
+}
+
+service Comptes {
+    rpc ChiffreAffaires(ChiffreAffairesRequest) returns (ChiffreAffairesResponse);
+}
