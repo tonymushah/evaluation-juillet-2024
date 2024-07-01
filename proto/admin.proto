@@ -121,3 +121,7 @@ service Location {
     rpc ListBien(ListBienRequest) returns (ListBienResponse);
     rpc ListClient(ListClientRequest) returns (ListClientResponse);
 }
+
+service Database {
+    rpc Reset(Empty) returns (Empty);
+}
