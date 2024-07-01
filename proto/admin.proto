@@ -1,11 +1,12 @@
 syntax = "proto3";
 
+option optimize_for = CODE_SIZE;
+
 package mg.mada_immo.admin;
 
 message Empty {
 
 }
-
 
 message LoginRequest {
     string password = 2;
