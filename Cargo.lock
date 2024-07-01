@@ -728,6 +728,7 @@ dependencies = [
  "diesel-schemas",
  "dotenvy",
  "serde",
+ "thiserror",
  "time",
  "uuid",
 ]

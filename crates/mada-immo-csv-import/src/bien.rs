@@ -1,5 +1,4 @@
 pub mod models;
-pub mod utils;
 
 use bigdecimal::BigDecimal;
 use diesel::{prelude::*, PgConnection, QueryResult};

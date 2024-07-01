@@ -11,6 +11,7 @@ serde.workspace = true
 uuid.workspace = true
 time.workspace = true
 bigdecimal = { workspace = true, features = ["serde"] }
+thiserror.workspace = true
 
 [dev-dependencies]
 dotenvy.workspace = true
