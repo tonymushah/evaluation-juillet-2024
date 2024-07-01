@@ -1,4 +1,4 @@
-import type { Cookies } from '@sveltejs/kit';
+import { redirect, type Cookies } from '@sveltejs/kit';
 
 // place files you want to import through the `$lib` alias in this folder.
 export function generateTokenHandler(KEY: string, path?: string) {
@@ -13,6 +13,18 @@ export function generateTokenHandler(KEY: string, path?: string) {
 			} else {
 				return token;
 			}
+		},
+		getTokenWithCallback(cookies: Cookies, callback: () => never): string {
+			try {
+				return this.getToken(cookies);
+			} catch (error) {
+				callback();
+			}
+		},
+		getTokenOrRedirect(cookies: Cookies, path: string): string {
+			return this.getTokenWithCallback(cookies, () => {
+				redirect(301, path);
+			});
 		},
 		setToken(cookies: Cookies, value: string) {
 			cookies.set(KEY, value, {
