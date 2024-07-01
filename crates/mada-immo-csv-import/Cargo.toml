@@ -4,3 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+diesel.workspace = true
+csv.workspace = true
+diesel-schemas = { workspace = true }
+serde.workspace = true
