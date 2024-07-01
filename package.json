@@ -16,7 +16,7 @@
 		"proto:admin": "protoc --ts_opt server_none --ts_out ./app/lib/protos/ --proto_path proto proto/admin.proto",
 		"proto:proprietaire": "protoc --ts_opt server_none --ts_out ./app/lib/protos/ --proto_path proto proto/proprietaire.proto",
 		"proto:client": "protoc --ts_opt server_none --ts_out ./app/lib/protos/ --proto_path proto proto/client.proto",
-		"proto:all": "proto:admin & proto:proprietaire & proto:client"
+		"proto:all": "pnpm proto:admin && pnpm proto:proprietaire && pnpm proto:client"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
