@@ -1,6 +1,6 @@
 -- Your SQL goes here
 create table bien (
-    id_bien UUID PRIMARY KEY DEFault gen_random_uuid(),
+    id_bien TEXT PRIMARY KEY,
     nom TEXT NOT NULL,
     region UUID REFERENCES region(id_region) NOT NULL,
     description TEXT NOT NULL,

@@ -19,7 +19,7 @@ diesel::table! {
 diesel::table! {
     v_bien_loyer_recent (id_bien_loyer) {
         id_bien_loyer -> Uuid,
-        bien -> Uuid,
+        bien -> Text,
         valeur -> Numeric,
         date_entree -> Timestamp,
     }
@@ -27,7 +27,7 @@ diesel::table! {
 
 diesel::table! {
     v_bien (id_bien, id_type_bien, proprietaire, id_type_bien_commission) {
-        id_bien -> Uuid,
+        id_bien -> Text,
         nom -> Text,
         region -> Uuid,
         description -> Text,
@@ -43,7 +43,7 @@ diesel::table! {
 diesel::table! {
     v_location_recent(id_location) {
         id_location -> Uuid,
-        bien -> Uuid,
+        bien -> Text,
         client -> Text,
         date_debut -> Timestamp,
         date_fin -> Nullable<Timestamp>,
