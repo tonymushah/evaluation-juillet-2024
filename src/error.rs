@@ -32,6 +32,4 @@ pub enum Error {
     TryFromInt,
     #[error(transparent)]
     Io(#[from] std::io::Error),
-    #[error(transparent)]
-    Csv(#[from] csv::Error),
 }
