@@ -409,6 +409,9 @@ dependencies = [
  "dotenvy",
  "hmac",
  "jwt",
+ "mada-immo-admin-tonic",
+ "mada-immo-client-tonic",
+ "mada-immo-proprio-tonic",
  "prost",
  "rand",
  "regex",
@@ -419,6 +422,7 @@ dependencies = [
  "tokio",
  "tonic",
  "tonic-build",
+ "tonic-web",
  "uuid",
 ]
 
@@ -581,6 +585,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "http-range-header"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "add0ab9360ddbd88cfeb3bd9574a1d85cfdfa14db10b3e21d3700dbc4328758f"
+
+[[package]]
 name = "httparse"
 version = "1.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -719,6 +729,22 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a7a70ba024b9dc04c27ea2f0c0548feb474ec5c54bba33a7f72f873a39d07b24"
 
 [[package]]
+name = "mada-immo-admin-tonic"
+version = "0.1.0"
+dependencies = [
+ "prost",
+ "tonic",
+]
+
+[[package]]
+name = "mada-immo-client-tonic"
+version = "0.1.0"
+dependencies = [
+ "prost",
+ "tonic",
+]
+
+[[package]]
 name = "mada-immo-csv-import"
 version = "0.1.0"
 dependencies = [
@@ -732,6 +758,14 @@ dependencies = [
  "thiserror",
  "time",
  "uuid",
+]
+
+[[package]]
+name = "mada-immo-proprio-tonic"
+version = "0.1.0"
+dependencies = [
+ "prost",
+ "tonic",
 ]
 
 [[package]]
@@ -1404,6 +1438,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "tonic-web"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dc3b0e1cedbf19fdfb78ef3d672cb9928e0a91a9cb4629cc0c916e8cff8aaaa1"
+dependencies = [
+ "base64 0.21.7",
+ "bytes",
+ "http",
+ "http-body",
+ "hyper",
+ "pin-project",
+ "tokio-stream",
+ "tonic",
+ "tower-http",
+ "tower-layer",
+ "tower-service",
+ "tracing",
+]
+
+[[package]]
 name = "tower"
 version = "0.4.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1421,6 +1475,24 @@ dependencies = [
  "tower-layer",
  "tower-service",
  "tracing",
+]
+
+[[package]]
+name = "tower-http"
+version = "0.4.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "61c5bb1d698276a2443e5ecfabc1008bf15a36c12e6a7176e7bf089ea9131140"
+dependencies = [
+ "bitflags 2.6.0",
+ "bytes",
+ "futures-core",
+ "futures-util",
+ "http",
+ "http-body",
+ "http-range-header",
+ "pin-project-lite",
+ "tower-layer",
+ "tower-service",
 ]
 
 [[package]]

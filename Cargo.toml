@@ -23,7 +23,11 @@ tokio = { workspace = true, features = ["sync", "macros", "rt-multi-thread"] }
 convert_case = "0.6"
 tonic.workspace = true
 prost.workspace = true
+tonic-web.workspace = true
 diesel-schemas.workspace = true
+mada-immo-admin-tonic.workspace = true
+mada-immo-client-tonic.workspace = true
+mada-immo-proprio-tonic.workspace = true
 
 [build-dependencies]
 tonic-build = { version = "0.11" }
@@ -31,7 +35,10 @@ tonic-build = { version = "0.11" }
 [workspace]
 members = [
     "crates/diesel-schemas",
+    "crates/mada-immo-admin-tonic",
+    "crates/mada-immo-client-tonic",
     "crates/mada-immo-csv-import",
+    "crates/mada-immo-proprio-tonic",
     "crates/mada-immo-utils",
 ]
 
@@ -65,4 +72,7 @@ diesel-schemas = { path = "./crates/diesel-schemas" }
 serde = { version = "1", features = ["derive"] }
 dotenvy = "0.15"
 mada-immo-utils = { path = "./crates/mada-immo-utils" }
-tonic_web = "0.11"
+tonic-web = "0.11"
+mada-immo-admin-tonic = { path = "./crates/mada-immo-admin-tonic" }
+mada-immo-client-tonic = { path = "./crates/mada-immo-client-tonic" }
+mada-immo-proprio-tonic = { path = "./crates/mada-immo-proprio-tonic" }
