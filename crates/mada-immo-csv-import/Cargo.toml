@@ -10,7 +10,7 @@ diesel-schemas = { workspace = true }
 serde.workspace = true
 uuid.workspace = true
 time.workspace = true
-bigdecimal.workspace = true
+bigdecimal = { workspace = true, features = ["serde"] }
 
 [dev-dependencies]
 dotenvy.workspace = true
