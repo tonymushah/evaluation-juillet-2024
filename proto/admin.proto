@@ -104,7 +104,7 @@ message ListClientRequest {
     optional string email = 4;
 }
 
-message ListClient {
+message ListClientResponse {
     message Client {
         string email = 1;
         string nom = 2;
