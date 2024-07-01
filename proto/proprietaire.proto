@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option optimize_for = CODE_SIZE;
 
-package mg.mada_immo.prorietaire;
+package prorietaire;
 
 message Empty{}
 
