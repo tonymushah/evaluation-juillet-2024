@@ -1,5 +1,5 @@
 import { route } from '$lib/ROUTES';
-import { generateTokenHandler } from '$lib/generateTokenHandler.server';
+import generateTokenHandler from '$lib/generateTokenHandler.server';
 import { type Cookies } from '@sveltejs/kit';
 import { ADMIN_TOKEN_KEY } from './token.key';
 
