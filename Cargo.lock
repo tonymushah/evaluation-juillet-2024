@@ -726,6 +726,7 @@ dependencies = [
  "csv",
  "diesel",
  "diesel-schemas",
+ "dotenvy",
  "serde",
  "time",
  "uuid",
