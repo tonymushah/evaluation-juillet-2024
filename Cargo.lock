@@ -726,6 +726,8 @@ dependencies = [
  "diesel",
  "diesel-schemas",
  "serde",
+ "time",
+ "uuid",
 ]
 
 [[package]]
