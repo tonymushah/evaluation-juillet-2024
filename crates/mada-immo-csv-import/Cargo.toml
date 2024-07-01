@@ -12,6 +12,7 @@ uuid.workspace = true
 time = { workspace = true, features = ["formatting", "parsing"] }
 bigdecimal = { workspace = true, features = ["serde"] }
 thiserror.workspace = true
+mada-immo-utils = { workspace = true }
 
 [dev-dependencies]
 dotenvy.workspace = true

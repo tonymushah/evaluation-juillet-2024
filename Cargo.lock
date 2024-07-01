@@ -727,6 +727,7 @@ dependencies = [
  "diesel",
  "diesel-schemas",
  "dotenvy",
+ "mada-immo-utils",
  "serde",
  "thiserror",
  "time",
