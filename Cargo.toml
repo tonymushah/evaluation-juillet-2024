@@ -29,7 +29,11 @@ diesel-schemas.workspace = true
 tonic-build = { version = "0.11" }
 
 [workspace]
-members = ["crates/diesel-schemas", "crates/mada-immo-csv-import"]
+members = [
+    "crates/diesel-schemas",
+    "crates/mada-immo-csv-import",
+    "crates/mada-immo-utils",
+]
 
 [workspace.dependencies]
 tonic = { version = "0.11" }
@@ -60,3 +64,4 @@ regex = "1.10"
 diesel-schemas = { path = "./crates/diesel-schemas" }
 serde = { version = "1", features = ["derive"] }
 dotenvy = "0.15"
+mada-immo-utils = { path = "./crates/mada-immo-utils" }
