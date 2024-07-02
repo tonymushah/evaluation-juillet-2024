@@ -38,6 +38,19 @@ diesel::table! {
 }
 
 diesel::table! {
+    location_speculative (id_location_speculative) {
+        id_location_speculative -> Uuid,
+        location -> Uuid,
+        date_ref -> Date,
+        loyer_initial -> Numeric,
+        commission -> Numeric,
+        num_mois -> Int4,
+        loyer_a_payer -> Numeric,
+        valeur_commission -> Numeric,
+    }
+}
+
+diesel::table! {
     payement (id_payement) {
         id_payement -> Uuid,
         location -> Uuid,
@@ -84,6 +97,7 @@ diesel::joinable!(bien -> type_bien (type_bien));
 diesel::joinable!(bien_loyer -> bien (bien));
 diesel::joinable!(location -> bien (bien));
 diesel::joinable!(location -> client (client));
+diesel::joinable!(location_speculative -> location (location));
 diesel::joinable!(payement -> bien_loyer (loyer));
 diesel::joinable!(payement -> location (location));
 diesel::joinable!(payement -> type_bien_commission (commission_id));
@@ -94,6 +108,7 @@ diesel::allow_tables_to_appear_in_same_query!(
     bien_loyer,
     client,
     location,
+    location_speculative,
     payement,
     proprietaire,
     region,
