@@ -1,7 +1,21 @@
+use bigdecimal::BigDecimal;
 use diesel::prelude::*;
-use diesel_schemas::tables::{client, location};
-use time::PrimitiveDateTime;
+use diesel_schemas::tables::{client, location, location_speculative};
+use time::{Date, PrimitiveDateTime};
 use uuid::Uuid;
+
+#[derive(Debug, Clone, Insertable)]
+#[diesel(table_name = location_speculative)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+pub struct InsertLocationSpeculable {
+    pub location: Uuid,
+    pub date_ref: Date,
+    pub loyer_initial: BigDecimal,
+    pub commission: BigDecimal,
+    pub num_mois: i32,
+    pub loyer_a_payer: BigDecimal,
+    pub valeur_commission: BigDecimal,
+}
 
 #[derive(Debug, Clone, Insertable)]
 #[diesel(table_name = location)]
