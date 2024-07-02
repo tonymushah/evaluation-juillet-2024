@@ -13,7 +13,12 @@ use tonic::transport::Server;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     dotenvy::dotenv().ok();
-    let addr = env::var("ADMIN_BACK_ADDR")?.parse()?;
+    let addr = env::var("ADMIN_BACK_ADDR")
+        .map(|r| {
+            println!("{r}");
+            r
+        })?
+        .parse()?;
     let pool = backend::etablish_connection();
     Server::builder()
         .accept_http1(true)
