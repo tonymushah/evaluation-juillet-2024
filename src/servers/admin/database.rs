@@ -10,7 +10,14 @@ pub struct DatabaseService {
 
 #[tonic::async_trait]
 impl Database for DatabaseService {
-    async fn reset(&self, reuest: Request<Empty>) -> TonicRpcResult<Empty> {
-        todo!()
+    async fn reset(&self, _reuest: Request<Empty>) -> TonicRpcResult<Empty> {
+        let pool = self.pool.clone();
+        crate::spawn_blocking(move || -> crate::Result<()> {
+            let mut con = pool.get()?;
+            crate::reset::reset_db(&mut con)?;
+            Ok(())
+        })
+        .await??;
+        Ok(Response::new(Empty {}))
     }
 }
