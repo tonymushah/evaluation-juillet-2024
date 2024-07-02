@@ -17,6 +17,6 @@ impl Location for LocationService {
         &self,
         request: Request<ListLocationRequest>,
     ) -> TonicRpcResult<ListLocationResponse> {
-        todo!()
+        crate::tonic_not_implemented()
     }
 }

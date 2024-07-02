@@ -18,15 +18,15 @@ impl Biens for BiensService {
         &self,
         request: Request<ListBienRequest>,
     ) -> TonicRpcResult<ListBienResponse> {
-        todo!()
+        crate::tonic_not_implemented()
     }
     async fn get(&self, request: tonic::Request<GetBienRequest>) -> TonicRpcResult<Bien> {
-        todo!()
+        crate::tonic_not_implemented()
     }
     async fn list_type_bien(
         &self,
         request: Request<ListTypeBienRequest>,
     ) -> TonicRpcResult<ListTypeBienResponse> {
-        todo!()
+        crate::tonic_not_implemented()
     }
 }

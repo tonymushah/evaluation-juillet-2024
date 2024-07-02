@@ -11,6 +11,6 @@ pub struct AuthService {
 #[tonic::async_trait]
 impl Auth for AuthService {
     async fn login(&self, request: Request<LoginRequest>) -> TonicRpcResult<LoginResponse> {
-        todo!()
+        crate::tonic_not_implemented()
     }
 }

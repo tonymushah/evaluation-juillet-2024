@@ -19,13 +19,13 @@ impl Comptes for ComptesService {
         &self,
         request: Request<Streaming<ChiffreAffaireRequest>>,
     ) -> TonicRpcResult<Self::ChiffreAffaireStream> {
-        todo!()
+        crate::tonic_not_implemented()
     }
     type GainStream = ReceiverStream<Result<GainResponse, Status>>;
     async fn gain(
         &self,
         request: Request<Streaming<GainRequest>>,
     ) -> TonicRpcResult<Self::GainStream> {
-        todo!()
+        crate::tonic_not_implemented()
     }
 }

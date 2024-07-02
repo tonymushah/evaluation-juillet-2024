@@ -1,6 +1,6 @@
 use mada_immo_client_tonic::{auth_server::Auth, LoginRequest, LoginResponse};
 use mada_immo_csv_import::location::models::InsertClient;
-use tonic::{Request, Response, Status};
+use tonic::{Request, Response};
 
 use crate::{servers::TonicRpcResult, DbPool};
 

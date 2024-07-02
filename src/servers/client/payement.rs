@@ -15,18 +15,18 @@ pub struct PayementService {
 #[tonic::async_trait]
 impl Payement for PayementService {
     async fn loyers(&self, request: Request<LoyersRequest>) -> TonicRpcResult<LoyersResponse> {
-        todo!()
+        crate::tonic_not_implemented()
     }
     async fn loyers_paye(
         &self,
         request: Request<LoyersPayeRequest>,
     ) -> TonicRpcResult<LoyersPayeResponse> {
-        todo!()
+        crate::tonic_not_implemented()
     }
     async fn faire_payement(
         &self,
         request: Request<FairePayementRequest>,
     ) -> TonicRpcResult<Empty> {
-        todo!()
+        crate::tonic_not_implemented()
     }
 }

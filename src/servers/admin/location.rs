@@ -17,18 +17,18 @@ impl Location for LocationService {
         &self,
         request: Request<NewLocationRequest>,
     ) -> TonicRpcResult<NewLocationResponse> {
-        todo!()
+        crate::tonic_not_implemented()
     }
     async fn list_bien(
         &self,
         request: tonic::Request<ListBienRequest>,
     ) -> TonicRpcResult<ListBienResponse> {
-        todo!()
+        crate::tonic_not_implemented()
     }
     async fn list_client(
         &self,
         request: Request<ListClientRequest>,
     ) -> TonicRpcResult<ListClientResponse> {
-        todo!()
+        crate::tonic_not_implemented()
     }
 }

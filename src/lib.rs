@@ -39,3 +39,9 @@ where
 {
     Ok(tokio::task::spawn_blocking(f).await?)
 }
+
+pub(crate) fn tonic_not_implemented<T>() -> std::result::Result<T, tonic::Status> {
+    Err(tonic::Status::unimplemented(
+        "This rpc is not implemented yet!",
+    ))
+}
