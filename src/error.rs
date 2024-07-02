@@ -37,6 +37,10 @@ pub enum Error {
     ToStr(#[from] tonic::metadata::errors::ToStrError),
     #[error(transparent)]
     JoinHandle(#[from] tokio::task::JoinError),
+    #[error(transparent)]
+    CSVCommissionInsert(#[from] mada_immo_csv_import::commission::CSVCommissionInsertError),
+    #[error(transparent)]
+    CSVLocationInsert(#[from] mada_immo_csv_import::location::CSVLocationInsertError),
 }
 
 impl From<Error> for Status {

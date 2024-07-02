@@ -31,6 +31,7 @@ mada-immo-proprio-tonic.workspace = true
 tokio-stream = { workspace = true, features = ["sync"] }
 http = "1.1.0"
 mada-immo-csv-import.workspace = true
+csv.workspace = true
 
 [build-dependencies]
 tonic-build = { version = "0.11" }
