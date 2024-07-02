@@ -1,5 +1,6 @@
 mod error;
 pub mod reset;
+pub mod servers;
 
 pub use error::Error;
 
@@ -27,13 +28,4 @@ pub fn etablish_connection() -> DbPool {
     Pool::builder()
         .build(manager)
         .expect("Failed to create a pool.")
-}
-
-#[derive(Clone)]
-pub struct ServerState;
-
-impl Default for ServerState {
-    fn default() -> Self {
-        Self
-    }
 }
