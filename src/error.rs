@@ -1,6 +1,7 @@
 use std::num::ParseIntError;
 
 use diesel::r2d2;
+use tonic::Status;
 
 #[derive(Debug, thiserror::Error)]
 pub enum Error {
@@ -34,4 +35,12 @@ pub enum Error {
     Io(#[from] std::io::Error),
     #[error(transparent)]
     ToStr(#[from] tonic::metadata::errors::ToStrError),
+    #[error(transparent)]
+    JoinHandle(#[from] tokio::task::JoinError),
+}
+
+impl From<Error> for Status {
+    fn from(value: Error) -> Self {
+        Self::unknown(value.to_string())
+    }
 }

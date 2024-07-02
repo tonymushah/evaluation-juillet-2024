@@ -31,3 +31,11 @@ pub fn etablish_connection() -> DbPool {
         .build(manager)
         .expect("Failed to create a pool.")
 }
+
+pub(crate) async fn spawn_blocking<F, R>(f: F) -> crate::Result<R>
+where
+    F: FnOnce() -> R + Send + 'static,
+    R: Send + 'static,
+{
+    Ok(tokio::task::spawn_blocking(f).await?)
+}

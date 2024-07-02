@@ -412,6 +412,7 @@ dependencies = [
  "jwt",
  "mada-immo-admin-tonic",
  "mada-immo-client-tonic",
+ "mada-immo-csv-import",
  "mada-immo-proprio-tonic",
  "prost",
  "rand",

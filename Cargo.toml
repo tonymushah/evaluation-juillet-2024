@@ -30,6 +30,7 @@ mada-immo-client-tonic.workspace = true
 mada-immo-proprio-tonic.workspace = true
 tokio-stream = { workspace = true, features = ["sync"] }
 http = "1.1.0"
+mada-immo-csv-import.workspace = true
 
 [build-dependencies]
 tonic-build = { version = "0.11" }
@@ -74,3 +75,4 @@ mada-immo-admin-tonic = { path = "./crates/mada-immo-admin-tonic" }
 mada-immo-client-tonic = { path = "./crates/mada-immo-client-tonic" }
 mada-immo-proprio-tonic = { path = "./crates/mada-immo-proprio-tonic" }
 tokio-stream = { version = "0.1" }
+mada-immo-csv-import = { path = "./crates/mada-immo-csv-import" }
