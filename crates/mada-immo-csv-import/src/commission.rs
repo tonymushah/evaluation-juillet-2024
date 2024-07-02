@@ -92,8 +92,10 @@ mod tests {
     }
     #[test]
     fn insert_test() {
-        let reader =
-            BufReader::new(File::open("../../data/Donnees-csv-saison3 - Commission.csv").unwrap());
+        let reader = BufReader::new(
+            File::open("../../data/Resultat-Donnees-csv-import-2juillet-saison3 - Commission.csv")
+                .unwrap(),
+        );
         let pool = etablish_connection();
         let mut con = pool.get().unwrap();
 

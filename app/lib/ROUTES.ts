@@ -13,6 +13,7 @@ const PAGES = {
   "/admin": `/admin`,
   "/admin/imports": `/admin/imports`,
   "/admin/login": `/admin/login`,
+  "/admin/reset": `/admin/reset`,
   "/client": `/client`,
   "/client/login": `/client/login`,
   "/proprio": `/proprio`,
@@ -140,7 +141,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 * ```
 */
 export type KIT_ROUTES = {
-  PAGES: { '/': never, '/admin': never, '/admin/imports': never, '/admin/login': never, '/client': never, '/client/login': never, '/proprio': never, '/proprio/login': never }
+  PAGES: { '/': never, '/admin': never, '/admin/imports': never, '/admin/login': never, '/admin/reset': never, '/client': never, '/client/login': never, '/proprio': never, '/proprio/login': never }
   SERVERS: Record<string, never>
   ACTIONS: Record<string, never>
   LINKS: Record<string, never>

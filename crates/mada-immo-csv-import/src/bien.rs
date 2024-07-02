@@ -77,8 +77,9 @@ mod tests {
 
     #[test]
     fn parse_test() {
-        let reader =
-            BufReader::new(File::open("../../data/Donnees-csv-saison3 - Biens.csv").unwrap());
+        let reader = BufReader::new(
+            File::open("../../Resultat-Donnees-csv-import-2juillet-saison3 - Biens.csv").unwrap(),
+        );
         let mut reader = Reader::from_reader(reader);
         for bien in reader.deserialize::<CSVBien>().flatten() {
             println!("{:?}", bien)
@@ -86,8 +87,10 @@ mod tests {
     }
     #[test]
     fn insert_test() {
-        let reader =
-            BufReader::new(File::open("../../data/Donnees-csv-saison3 - Biens.csv").unwrap());
+        let reader = BufReader::new(
+            File::open("../../data/Resultat-Donnees-csv-import-2juillet-saison3 - Biens.csv")
+                .unwrap(),
+        );
         let pool = etablish_connection();
         let mut con = pool.get().unwrap();
 
