@@ -1,0 +1,31 @@
+use mada_immo_proprio_tonic::{
+    biens_server::Biens, Bien, GetBienRequest, ListBienRequest, ListBienResponse,
+    ListTypeBienRequest, ListTypeBienResponse,
+};
+use tonic::Request;
+
+use crate::{servers::TonicRpcResult, DbPool};
+
+#[derive(Debug, Clone)]
+pub struct BiensService {
+    pub pool: DbPool,
+}
+
+#[tonic::async_trait]
+impl Biens for BiensService {
+    async fn list_bien(
+        &self,
+        request: Request<ListBienRequest>,
+    ) -> TonicRpcResult<ListBienResponse> {
+        todo!()
+    }
+    async fn get(&self, request: tonic::Request<GetBienRequest>) -> TonicRpcResult<Bien> {
+        todo!()
+    }
+    async fn list_type_bien(
+        &self,
+        request: Request<ListTypeBienRequest>,
+    ) -> TonicRpcResult<ListTypeBienResponse> {
+        todo!()
+    }
+}
