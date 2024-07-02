@@ -2,6 +2,7 @@ mod error;
 pub mod paginate;
 pub mod reset;
 pub mod servers;
+pub mod token;
 
 pub use error::Error;
 

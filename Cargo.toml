@@ -29,6 +29,7 @@ mada-immo-admin-tonic.workspace = true
 mada-immo-client-tonic.workspace = true
 mada-immo-proprio-tonic.workspace = true
 tokio-stream = { workspace = true, features = ["sync"] }
+http = "1.1.0"
 
 [build-dependencies]
 tonic-build = { version = "0.11" }
@@ -55,10 +56,6 @@ diesel = { version = "2", features = [
 ] }
 csv = "1"
 tokio = { version = "1" }
-darling = "0.20"
-proc-macro2 = "1"
-quote = "1"
-syn = "2"
 bigdecimal = { version = "0.4" }
 uuid = { version = "1", features = ["v4"] }
 time = { version = "0.3", features = [
@@ -67,7 +64,6 @@ time = { version = "0.3", features = [
     "serde-human-readable",
 ] }
 thiserror = "1"
-anyhow = "1"
 regex = "1.10"
 diesel-schemas = { path = "./crates/diesel-schemas" }
 serde = { version = "1", features = ["derive"] }

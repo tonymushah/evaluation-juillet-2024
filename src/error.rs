@@ -32,4 +32,6 @@ pub enum Error {
     TryFromInt,
     #[error(transparent)]
     Io(#[from] std::io::Error),
+    #[error(transparent)]
+    ToStr(#[from] tonic::metadata::errors::ToStrError),
 }
