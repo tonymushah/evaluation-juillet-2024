@@ -1,3 +1,4 @@
+pub mod generate_speculative;
 pub mod models;
 
 use diesel::prelude::*;
