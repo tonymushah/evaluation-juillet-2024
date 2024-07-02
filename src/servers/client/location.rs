@@ -3,11 +3,12 @@ use mada_immo_client_tonic::{
 };
 use tonic::Request;
 
-use crate::{servers::TonicRpcResult, DbPool};
+use crate::{servers::TonicRpcResult, token::ClientHmac, DbPool};
 
 #[derive(Debug, Clone)]
 pub struct LocationService {
     pub pool: DbPool,
+    pub hmac: ClientHmac,
 }
 
 #[tonic::async_trait]
