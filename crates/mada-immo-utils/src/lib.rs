@@ -1,3 +1,5 @@
 mod get_date_fin_from_nb_mois;
+mod get_liste_first_month_between_two_dates;
 
 pub use get_date_fin_from_nb_mois::get_date_fin_from_nb_mois;
+pub use get_liste_first_month_between_two_dates::get_liste_first_month_between_two_dates;
