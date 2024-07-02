@@ -1,8 +1,30 @@
 use bigdecimal::BigDecimal;
 use diesel::prelude::*;
-use diesel_schemas::tables::{client, location, location_speculative};
+use diesel_schemas::{
+    tables::{client, location, location_speculative},
+    views::v_location_bien,
+};
 use time::{Date, PrimitiveDateTime};
 use uuid::Uuid;
+
+#[derive(Debug, Clone, Selectable, Queryable)]
+#[diesel(table_name = v_location_bien)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+pub struct LocationCommissionLoyer {
+    pub id_location: Uuid,
+    pub commission: BigDecimal,
+    pub loyer: BigDecimal,
+}
+
+impl LocationCommissionLoyer {
+    pub fn get_by_location(id_loc: Uuid, con: &mut PgConnection) -> QueryResult<Self> {
+        use self::v_location_bien::dsl::*;
+        v_location_bien
+            .filter(id_location.eq(id_loc))
+            .select(Self::as_select())
+            .get_result(con)
+    }
+}
 
 #[derive(Debug, Clone, Insertable)]
 #[diesel(table_name = location_speculative)]
