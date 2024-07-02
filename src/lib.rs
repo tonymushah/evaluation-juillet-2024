@@ -1,4 +1,5 @@
 mod error;
+pub mod paginate;
 pub mod reset;
 pub mod servers;
 
