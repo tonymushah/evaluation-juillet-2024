@@ -81,3 +81,22 @@ diesel::table! {
         valeur_commission -> Numeric
     }
 }
+
+diesel::table! {
+    v_location_bien(id_location) {
+        id_location -> Uuid,
+        id_bien -> Text,
+        client -> Text,
+        date_debut -> Timestamp,
+        date_fin -> Timestamp,
+        bien_nom -> Text,
+        bien_descriprion -> Text,
+        proprietaire -> Text,
+        id_type_bien -> Uuid,
+        id_bien_loyer -> Uuid,
+        loyer -> Numeric,
+        id_type_bien_commission -> Numeric,
+        commission -> Numeric,
+        nom_type_bien -> Text
+    }
+}
