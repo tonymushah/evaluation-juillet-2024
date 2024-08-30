@@ -34,7 +34,7 @@ mada-immo-csv-import.workspace = true
 csv.workspace = true
 
 [build-dependencies]
-tonic-build = { version = "0.11" }
+tonic-build = { version = "0.12" }
 
 [workspace]
 members = [
@@ -47,8 +47,8 @@ members = [
 ]
 
 [workspace.dependencies]
-tonic = { version = "0.11" }
-prost = { version = "0.12" }
+tonic = { version = "0.12" }
+prost = { version = "0.13" }
 diesel = { version = "2", features = [
     "postgres",
     "r2d2",
@@ -71,7 +71,7 @@ diesel-schemas = { path = "./crates/diesel-schemas" }
 serde = { version = "1", features = ["derive"] }
 dotenvy = "0.15"
 mada-immo-utils = { path = "./crates/mada-immo-utils" }
-tonic-web = "0.11"
+tonic-web = "0.12"
 mada-immo-admin-tonic = { path = "./crates/mada-immo-admin-tonic" }
 mada-immo-client-tonic = { path = "./crates/mada-immo-client-tonic" }
 mada-immo-proprio-tonic = { path = "./crates/mada-immo-proprio-tonic" }
